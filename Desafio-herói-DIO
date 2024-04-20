@@ -1,0 +1,52 @@
+// Função para determinar o rank com base nos pontos usando switch case
+function determinarRank(pontos) {
+    let rank;
+
+    switch (true) {
+        case pontos >= 0 && pontos <= 500:
+            rank = "Cobre";
+            break;
+        case pontos <= 1000:
+            rank = "Bronze";
+            break;
+        case pontos <= 2000:
+            rank = "Prata";
+            break;
+        case pontos <= 3000:
+            rank = "Ouro";
+            break;
+        case pontos <= 5000:
+            rank = "Platina";
+            break;
+        case pontos <= 7000:
+            rank = "Diamante";
+            break;
+        case pontos <= 10000:
+            rank = "Lenda";
+            break;
+        default:
+            rank = "Supremo";
+            break;
+    }
+
+    return rank;
+}
+
+// Exemplos de uso para cada rank
+let pontosJogador1 = 300; // Cobre
+let pontosJogador2 = 800; // Bronze
+let pontosJogador3 = 1500; // Prata
+let pontosJogador4 = 2500; // Ouro
+let pontosJogador5 = 4500; // Platina
+let pontosJogador6 = 6500; // Diamante
+let pontosJogador7 = 9000; // Lenda
+let pontosJogador8 = 12000; // Supremo
+
+console.log("Rank do jogador 1:", determinarRank(pontosJogador1));
+console.log("Rank do jogador 2:", determinarRank(pontosJogador2));
+console.log("Rank do jogador 3:", determinarRank(pontosJogador3));
+console.log("Rank do jogador 4:", determinarRank(pontosJogador4));
+console.log("Rank do jogador 5:", determinarRank(pontosJogador5));
+console.log("Rank do jogador 6:", determinarRank(pontosJogador6));
+console.log("Rank do jogador 7:", determinarRank(pontosJogador7));
+console.log("Rank do jogador 8:", determinarRank(pontosJogador8));
