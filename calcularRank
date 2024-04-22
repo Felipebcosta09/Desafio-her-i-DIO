@@ -1,0 +1,29 @@
+
+function calcularRank(vitorias, derrotas) {
+    const saldoRankeadas = vitorias - derrotas;
+
+    switch (true) {
+        case (saldoRankeadas <= 10):
+            return "Cobre";
+        case (saldoRankeadas <= 20):
+            return "Bronze";
+        case (saldoRankeadas <= 40):
+            return "Prata";
+        case (saldoRankeadas <= 60):
+            return "Ouro";
+        case (saldoRankeadas <= 80):
+            return "Platina";
+        case (saldoRankeadas <= 100):
+            return "Diamante";
+        default:
+            return "Supremo";
+    }
+}
+
+// Solicita ao usuário que insira o número de vitórias e derrotas
+const vitorias = parseInt(prompt("Insira o número de vitórias:"));
+const derrotas = parseInt(prompt("Insira o número de derrotas:"));
+
+// Verifica o rank e exibe o resultado
+const resultado = calcularRank(vitorias, derrotas);
+console.log(`Com ${vitorias} vitórias e ${derrotas} derrotas, o jogador possui o rank de ${resultado}.`);
