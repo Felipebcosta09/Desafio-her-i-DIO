@@ -1,29 +1,40 @@
-
 function calcularRank(vitorias, derrotas) {
     const saldoRankeadas = vitorias - derrotas;
+    let rank;
 
     switch (true) {
         case (saldoRankeadas <= 10):
-            return "Cobre";
+            rank = "Cobre";
+            break;
         case (saldoRankeadas <= 20):
-            return "Bronze";
+            rank = "Bronze";
+            break;
         case (saldoRankeadas <= 40):
-            return "Prata";
+            rank = "Prata";
+            break;
         case (saldoRankeadas <= 60):
-            return "Ouro";
+            rank = "Ouro";
+            break;
         case (saldoRankeadas <= 80):
-            return "Platina";
+            rank = "Platina";
+            break;
         case (saldoRankeadas <= 100):
-            return "Diamante";
+            rank = "Diamante";
+            break;
         default:
-            return "Supremo";
+            rank = "Supremo";
+            break;
     }
+
+    return { saldoRankeadas, rank };
 }
 
 // Solicita ao usuário que insira o número de vitórias e derrotas
 const vitorias = parseInt(prompt("Insira o número de vitórias:"));
 const derrotas = parseInt(prompt("Insira o número de derrotas:"));
 
-// Verifica o rank e exibe o resultado
-const resultado = calcularRank(vitorias, derrotas);
-console.log(`Com ${vitorias} vitórias e ${derrotas} derrotas, o jogador possui o rank de ${resultado}.`);
+// Calcula o rank
+const { saldoRankeadas, rank } = calcularRank(vitorias, derrotas);
+
+// Exibe o resultado
+console.log(`O Herói tem de saldo de ${saldoRankeadas} possuí o rank ${rank}`);
